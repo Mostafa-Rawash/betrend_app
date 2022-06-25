@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class Testsearching_for_images(FrappeTestCase):
+class TestSearchingforimages(FrappeTestCase):
 	pass

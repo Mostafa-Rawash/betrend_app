@@ -31,10 +31,10 @@ frappe.ready(function () {
 	frappe.web_form.after_save = (e) => {
 		var image_url = frappe.web_form.get_value("images");
 		if (image_url.match(regex)) {
-			var url = new URL(`https://betrend.live:5000/predict?image_url=${image_url}`)
+			var url = new URL(`http://betrend.live:5000/predict?image_url=${image_url}`)
 		}
 		else {
-			var url = new URL(`https://betrend.live:5000/predict?image_url=https://app.betrend.live/${image_url}`)
+			var url = new URL(`http://betrend.live:5000/predict?image_url=https://app.betrend.live/${image_url}`)
 		}
 		console.log(url.href);
 

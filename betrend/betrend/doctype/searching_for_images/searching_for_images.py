@@ -4,5 +4,5 @@
 # import frappe
 from frappe.model.document import Document
 
-class searching_for_images(Document):
+class Searchingforimages(Document):
 	pass
