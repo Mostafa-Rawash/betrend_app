@@ -1,0 +1,119 @@
+		{% macro my_account() %}
+		{% if frappe.user != 'Guest' %}
+		<ul class="list-unstyled">
+			<li class="sidebar-item">
+				<a href="/me">
+					<div class="profile-details d-flex">
+						<lord-icon src="https://cdn.lordicon.com/dxjqoygy.json" trigger="loop-on-hover" colors="primary:#121331,secondary:#044bd9" style="width:50px;height:50px" ></lord-icon>
+						<div class="name-job mx-auto">
+							<div class="profile_name">{{ frappe.get_cached_doc("User", frappe.user)["full_name"]   }}</div>
+							<div class="job">{{ _("My Account") }}</div>
+						</div>
+
+					</div>
+				</a>
+
+			</li>
+		</ul>
+		{% endif %}
+
+
+		{% endmacro %}
+
+		
+		<ul class="nav-links list-unstyled my-auto" id="sidebar_main">
+			<li v-for="nav_item in main_sidebar_items " class="sidebar-item">	
+				
+				<a v-bind:href="nav_item[0].route">
+					<div class="profile-details d-flex">
+						<lord-icon v-bind:src="'https://cdn.lordicon.com/' + [ icons[nav_item[0].title] ]" trigger="loop-on-hover" colors="primary:#121331,secondary:#044bd9" style="width:50px;height:50px"></lord-icon>
+
+						<div class="name-job m-auto">
+							<span class="link_name" >[[ nav_item[0].title ]]</span>	
+						</div>
+
+					</div>
+				</a>
+
+			</a>
+			</li>
+
+			<span v-if="sidebar_items">
+
+				<li v-for="nav_item in sidebar_items ">
+					<div class="iocn-link">
+						<a v-bind:href="nav_item.route">
+				<!-- <i class='bx bx-collection'></i> -->
+				
+				<span class="link_name" >[[nav_item.title ]]</span>
+				</a>
+				</div>
+				<ul class="sub-menu" >
+				<li><a class="link_name"  >[[nav_item.title ]]</a></li>
+				</ul>
+			</li>	    
+			</span>
+		</ul>			
+				{{ my_account() }}
+				
+				<script>
+					let menu = {{ main_sidebar_items | json }},
+			result = menu.reduce(function (r, a) {
+				r[a.title] = r[a.title] || [];
+				r[a.title].push(a);
+				return r;
+			}, Object.create(null));
+
+
+			console.log(menu);
+
+
+			frappe.ready(function () {
+				console.log(result);
+
+				const sidebar_main = {
+					el:  document.getElementById('sidebar_main'),
+					data() {
+					return {
+						main_sidebar_items: result  ,
+						sidebar_items: {{ sidebar_items | json }} ,
+						icons : {
+								"Predict Image Popularity" : "gqdnbnwt.json", 
+								"Searching for images" : "msoeawqm.json",
+								"Applying templates" : "jvucoldz.json",
+								"Share to multiplatform" : "udwhdpod.json"
+						}}
+				},
+				delimiters: ['[[', ']]'],
+				methods: {},
+			}
+
+
+
+				$('.sidebar-item a').each(function (index) {
+					const active_class = 'active'
+					const non_active_class = ''
+					let page_href = window.location.href;
+					if (page_href.indexOf('#') !== -1) {
+						page_href = page_href.slice(0, page_href.indexOf('#'));
+					}
+					if (this.href.trim() == page_href) {
+						$(this).removeClass(non_active_class).addClass(active_class);
+					} else {
+						$(this).removeClass(active_class).addClass(non_active_class);
+					}
+				});
+
+			// scroll the active sidebar item into view
+			let active_sidebar_item = $('.sidebar-item a.active');
+			if (active_sidebar_item.length > 0) {
+				active_sidebar_item.get(0)
+					.scrollIntoView({ behavior: "auto", block: "center", inline: "nearest" });
+			}
+
+
+			var sidebar_vue =   new Vue(sidebar_main)
+			});
+
+
+		</script>

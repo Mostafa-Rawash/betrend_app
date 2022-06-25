@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-03-10 02:15:43.956915",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "query_text",
+  "number_of_images",
+  "search_results"
+ ],
+ "fields": [
+  {
+   "fieldname": "query_text",
+   "fieldtype": "Data",
+   "label": "query text"
+  },
+  {
+   "default": "3",
+   "fieldname": "number_of_images",
+   "fieldtype": "Int",
+   "label": "number of images"
+  },
+  {
+   "fieldname": "search_results",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Search Results",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-18 13:27:31.648104",
+ "modified_by": "Administrator",
+ "module": "betrend",
+ "name": "searching_for_images",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

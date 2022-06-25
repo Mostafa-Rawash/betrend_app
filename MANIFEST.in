@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include betrend *.css
+recursive-include betrend *.csv
+recursive-include betrend *.html
+recursive-include betrend *.ico
+recursive-include betrend *.js
+recursive-include betrend *.json
+recursive-include betrend *.md
+recursive-include betrend *.png
+recursive-include betrend *.py
+recursive-include betrend *.svg
+recursive-include betrend *.txt
+recursive-exclude betrend *.pyc
