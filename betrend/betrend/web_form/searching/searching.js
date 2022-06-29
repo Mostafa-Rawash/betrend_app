@@ -32,7 +32,7 @@
 			// return false if not valid
 			num = frappe.web_form.get_value("number_of_images");
 			search_query = frappe.web_form.get_value("query_text")
-			var baseurl = `http://betrend.live:5000/search?text=${search_query}&num=${num}`
+			var baseurl = `https://mind.betrend.live/search?text=${search_query}&num=${num}`
 			console.log(baseurl);
 			req(baseurl)
 		}

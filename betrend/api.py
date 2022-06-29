@@ -1,4 +1,5 @@
 import frappe
+import requests , json
 from frappe import auth
 
 @frappe.whitelist( allow_guest=True )
@@ -30,6 +31,20 @@ def login(usr, pwd):
     }
 
 
+@frappe.whitelist( allow_guest=True )
+def predict(image_url):
+    frappe.errprint(image_url)
+    url = f"https://mind.betrend.live/predict?image_url={image_url}"
+    response = requests.post(url).json()
+    return response
+
+
+@frappe.whitelist( allow_guest=True )
+def search(text , num):
+    url = f"https://mind.betrend.live/search?text={text}&num={num}"
+    response = requests.post(url).json()
+    return response
+
 
 def generate_keys(user):
     user_details = frappe.get_doc('User', user)
@@ -43,3 +58,5 @@ def generate_keys(user):
     user_details.save()
 
     return api_secret
+
+

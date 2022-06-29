@@ -1,27 +1,65 @@
 @import './website/index';
 
 
-     
-.modal.fade.show{
-     opacity: 1;
-}  
+
+.modal.fade.show {
+    opacity: 1;
+}
 
 .sidebar-item a:hover {
-     color: #336a9d;
-     background-color: aquamarine;
- }
- .navbar{
-     padding:0.5rem 1rem;
- }
- .navbar-brand{
-     padding : 0px;
- }
- .navbar-brand img {
-     display: inline-block;
-     max-width: 150px;
-     max-height: 50px;
- }
+    color: #336a9d;
+    background-color: aquamarine;
+}
 
- [data-doctype="Web Form"] .page_content{
-     max-width: unset;
- }
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+
+.navbar-brand img {
+    display: inline-block;
+    max-width: 150px;
+    max-height: 50px;
+}
+
+[data-doctype="Web Form"] .page_content {
+    max-width: unset;
+}
+
+
+svg.radial-progress {
+    height: auto;
+    max-width: 200px;
+    padding: 1em;
+    transform: rotate(-90deg);
+    width: 100%;
+}
+
+svg.radial-progress circle {
+    fill: rgba(0, 0, 0, 0);
+    stroke: #fff;
+    stroke-dashoffset: 219.91148575129;
+    /* Circumference */
+    stroke-width: 10;
+}
+
+svg.radial-progress circle.incomplete {
+    opacity: 0.25;
+}
+
+svg.radial-progress circle.complete {
+    stroke-dasharray: 219.91148575129;
+    /* Circumference */
+}
+
+svg.radial-progress text {
+    font-weight: 800;
+    text-anchor: middle;
+}
+
+svg.radial-progress circle {
+    stroke: #83e4e2;
+}

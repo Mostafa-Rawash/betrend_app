@@ -57,7 +57,7 @@ id="page-{{ name or route | e }}" data-path="{{ pathname | e }}"
 {%- endmacro %}
 
 {% macro sidebar() %}
-<div class="sidebar-column col-sm-{{ columns }} d-flex  flex-column justify-content-between " style="position: fixed;height: 90%;z-index: 1000;background-color: aliceblue;">
+<div class="sidebar-column col-sm-{{ columns }} d-flex  flex-column justify-content-between " style="height: 90%;z-index: 1000;background-color: aliceblue;">
 	 {% block page_sidebar %} 
 	{% set main_sidebar_items = frappe.get_doc("Website Sidebar" , "main" )["sidebar_items"] %}
 	{% set admin_sidebar_items = frappe.get_doc("Portal Settings" )["menu"] %}
@@ -75,7 +75,7 @@ id="page-{{ name or route | e }}" data-path="{{ pathname | e }}"
 		{%- if not sidebar_right -%}
 		{{ sidebar() }}
 		{%- endif -%}
-		<div class="main-column col-sm-10 " style="position: fixed;right: 0px;" >
+		<div class="main-column col-sm-10 "  >
 
 			{{ main_content() }}
 
