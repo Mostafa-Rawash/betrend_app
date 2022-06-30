@@ -69,21 +69,9 @@ function req(data) {
 	}
 	
 	frappe.ready(function (frm) {
-		frappe.msgprint('Please fill all values carefully');
 		frappe.web_form.after_load = () => {
-
-			$(".templates .img-fluid").each(function(index, value){
-				console.log("hgkjnvfvdfjk");
-				$(this).on("click" , function(){
-					console.log(index);
-					if (index == '1'){
-						// backgroundColor unsplashId imageUrl title size 
-						   frappe.web_form.set_df_property('size', 'hidden', 1);
-					}
-				})
-			 })
-
-
+		
+			console.log("ssss");
 
 		 
 		// data = get_data()

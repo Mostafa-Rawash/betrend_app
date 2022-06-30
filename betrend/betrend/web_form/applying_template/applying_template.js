@@ -47,7 +47,9 @@ function req(data) {
 			strings += '</div> </div>'
 
 			frappe.web_form.set_value("results", strings)
-		}).then(() => {
+		}
+
+		).then(() => {
 			$("img.img-fluid").mousemove(function (e) {
 				if (e.offsetX > ($(this).offset().left + $(this).width() / 2) ) {
 					nmpX = ((($(this).offset().left + $(this).width() / 2)  - e.offsetX) / ($(this).offset().left + $(this).width() / 2) ) * 10
@@ -66,54 +68,54 @@ function req(data) {
 			})
 		})
 		.catch(error => console.log('error', error));
-	}
-	
-	frappe.ready(function (frm) {
-		frappe.msgprint('Please fill all values carefully');
-		frappe.web_form.after_load = () => {
+}
 
-			$(".templates .img-fluid").each(function(index, value){
-				console.log("hgkjnvfvdfjk");
-				$(this).on("click" , function(){
-					console.log(index);
-					if (index == '1'){
-						// backgroundColor unsplashId imageUrl title size 
-						   frappe.web_form.set_df_property('size', 'hidden', 1);
-					}
-				})
-			 })
+frappe.ready(function (frm) {
+	frappe.web_form.after_load = () => {
+
+		
+		$(".templates .img-fluid").each(function(index, value){
+			console.log("hgkjnvfvdfjk");
+			$(this).on("click" , function(){
+				console.log(index);
+				if (index == '1'){
+					// backgroundColor unsplashId imageUrl title size 
+					   frappe.web_form.set_df_property('size', 'hidden', 1);
+				}
+			})
+		 })
 
 
 
 		 
-		// data = get_data()
-		// req(data)
+		data = get_data()
+		req(data)
 
-		// frappe.web_form.	on("template_name", (f, template_name) => {
-		// 	data = get_data()
-		// 	req(data)
+		frappe.web_form.	on("template_name", (f, template_name) => {
+			data = get_data()
+			req(data)
 
-		// })
-		// frappe.web_form.on("title", (f, title) => {
-		// 	data = get_data()
-		// 	req(data)
-		// })
-		// frappe.web_form.on("size", (f, size) => {
-		// 	data = get_data()
-		// 	req(data)
-		// })
-		// frappe.web_form.on("image_url", (f, image_url) => {
-		// 	data = get_data()
-		// 	req(data)
-		// })
-		// frappe.web_form.on("subtitle", (f, subtitle) => {
-		// 	data = get_data()
-		// 	req(data)
-		// })
-		// frappe.web_form.on("color", (f, color) => {
-		// 	data = get_data()
-		// 	req(data)
-		// })
+		})
+		frappe.web_form.on("title", (f, title) => {
+			data = get_data()
+			req(data)
+		})
+		frappe.web_form.on("size", (f, size) => {
+			data = get_data()
+			req(data)
+		})
+		frappe.web_form.on("image_url", (f, image_url) => {
+			data = get_data()
+			req(data)
+		})
+		frappe.web_form.on("subtitle", (f, subtitle) => {
+			data = get_data()
+			req(data)
+		})
+		frappe.web_form.on("color", (f, color) => {
+			data = get_data()
+			req(data)
+		})
 	}
 	// 	frappe.web_form.submmetin = () => {
 	//  TODO: add the inputs  and results to data base 
