@@ -4,7 +4,6 @@ var t = 'www.google.com';
 
 
 
-
 var requestOptions = {
 	method: 'GET',
 };
@@ -14,14 +13,15 @@ function req(url, image_url) {
 	fetch(url, requestOptions)
 		.then(response => response.json())
 		.then((results) => {
+			var predictResult = results.result
 			frappe.web_form.set_value("results", `
 			<div class="row">
 			<div class="col-12 col-md-8"><img class="img-fluid" src="${image_url}"/></div>
 			<div class="col-12 col-md-4">  
-			<svg class="radial-progress" data-percentage="${results.resultOfPredicting[image_url].result}" viewBox="0 0 80 80">
+			<svg class="radial-progress" data-percentage="${predictResult}" viewBox="0 0 80 80">
    			<circle class="incomplete" cx="40" cy="40" r="35"></circle>
     			<circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;"></circle>
-    			<text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">${results.resultOfPredicting[image_url].result}</text>
+    			<text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">${predictResult}</text>
     			</svg> <svg class="radial-progress" data-percentage="33" viewBox="0 0 80 80">
 			</div>
 			</div>
@@ -57,32 +57,28 @@ svg.radial-progress text {
 
 svg.radial-progress circle { stroke: #fddc32; }
 			</style>`);
-			$('svg.radial-progress').each(function( index, value ) { 
-				$('circle.complete').removeAttr( 'style' );
-			});
+			$('svg.radial-progress circle.complete').removeAttr( 'style' );
 			
 			setTimeout(function() {
 				
-				$('svg.radial-progress').each(function( index, value ) { 
 					// If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
 					       // Get percentage of progress
-						   percent = parseFloat($(value).data('percentage'));
+						   percent = predictResult;
 						   // Get radius of the svg's circle.complete
-						   radius = parseFloat($('circle.complete').attr('r'));
+						   radius = 35;
 						   // Get circumference (2πr)
-						   circumference =  Math.PI * radius;
-						   // Get stroke-dashoffset value based on the percentage of the circumference
-						   strokeDashOffset = -((percent  *circumference) / 100);
+						//    circumference =  Math.PI * radius;
+						circumference = 2 * Math.PI * radius;
+						// Get stroke-dashoffset value based on the percentage of the circumference
+						//    strokeDashOffset = -((percent  *circumference) / 100);
+						strokeDashOffset = circumference - ((percent * circumference) / 100);
+
                     console.log(percent , radius , circumference , strokeDashOffset)
 						   // Transition progress for 1.25 seconds
 						   $('circle.complete').animate({'stroke-dashoffset': strokeDashOffset}, 1250);
 					    
-					});
-				}, 2000);
-					
-					
-})
-		.catch(error => console.info(error + " url: " + url))
+					}, 2000);}
+					).catch(error => console.info(error + " url: " + url))
 };
 
 
@@ -101,6 +97,7 @@ frappe.ready(function () {
 		console.log(url.href);
 
 		req(url, image_url)
+		return 0
 	}
 
 

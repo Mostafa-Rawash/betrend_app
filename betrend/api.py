@@ -33,7 +33,7 @@ def login(usr, pwd):
 
 @frappe.whitelist( allow_guest=True )
 def predict(image_url):
-    frappe.errprint(image_url)
+    # frappe.errprint(image_url)
     url = f"https://mind.betrend.live/predict?image_url={image_url}"
     response = requests.post(url).json()
     return response

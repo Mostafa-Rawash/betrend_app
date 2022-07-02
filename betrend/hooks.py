@@ -22,25 +22,25 @@ app_include_css = [
 	# "report.bundle.css",
 ]
 
-standard_portal_menu_items = [
-    {"title": "Taxpayers", "route": "/taxpayers" , "icon" : "dddd" , 'reference_doctype': "searching_for_images" ,"role" : "All"},
-]
+# standard_portal_menu_items = [
+#     {"title": "Taxpayers", "route": "/taxpayers" , "icon" : "dddd" , 'reference_doctype': "searching_for_images" ,"role" : "All"},
+# ]
 
 
 web_include_js = [
     # "https://unpkg.com/vue@next",
-    "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.2/underscore.min.js",
-    "https://cdn.lordicon.com/lusqsztk.js",
-    "boot.bundle.js",
-    "main.bundle.js",
+    # "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.2/underscore.min.js",
+    # "https://cdn.lordicon.com/lusqsztk.js",
+    # "boot.bundle.js",
+    # "main.bundle.js",
     "https://cdn.lordicon.com/xdjxvujz.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js",
+    # "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js",
 ]
 
 # "/assets/accounting/js/accounting.js"
 web_include_css = [
-    "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css",
-    "main.bundle.css"
+    # "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css",
+    # "main.bundle.css"
 	]
 
 # include js, css files in header of desk.html
