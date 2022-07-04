@@ -1,7 +1,9 @@
 @import './website/index';
 
 
-
+*{
+    font-family: poppins;
+}
 .modal.fade.show {
     opacity: 1;
 }
@@ -58,6 +60,7 @@ svg.radial-progress circle.complete {
 svg.radial-progress text {
     font-weight: 800;
     text-anchor: middle;
+    fill: #000 !important; 
 }
 
 svg.radial-progress circle {
@@ -67,4 +70,147 @@ svg.radial-progress circle {
 
 .modal-dialog-scrollable {
     height: auto !important; 
+}
+
+text.percentage{
+    color:black !important;
+}
+
+
+.frappe-card {
+     
+    background: rgba( 221, 232, 241, 0.5 ) !important;
+    box-shadow: 0 3px 13px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+
+
+.sidebar-column.col-sm-2.d-flex.flex-column.justify-content-between {
+        
+    /*background: rgba( 255, 255, 255, 0 ) !important;*/
+    /*box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );*/
+    /*backdrop-filter: blur( 2px );*/
+    /*-webkit-backdrop-filter: blur( 2px );*/
+    /*border-radius: 10px;*/
+    /*border: 1px solid rgba( 255, 255, 255, 0.18 );*/
+    /* z-index: 1000;*/
+    /* height: 100% !important;*/
+    /*position: fixed;*/
+    
+        background: rgba( 255, 255, 255, 0 ) !important;
+        box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+        backdrop-filter: blur( 2px );
+        -webkit-backdrop-filter: blur( 2px ) !important;
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        z-index: 1000;
+        height: 100% !important;
+        /* position: fixed; */
+        margin: 0px auto;
+        position: relative;
+        padding-top: 0px;
+        width: 240px;
+        float: right;
+        
+    }
+
+.sidebar-column.col-sm-2.d-flex.flex-column.justify-content-between a:active {
+        background-color: #04AA6D;
+        color: #cf1111;
+    }
+
+.sidebar-column.col-sm-2.d-flex.flex-column.justify-content-between a:hover {
+        color: #000000;
+        background: rgb(255 255 255 / 50%);
+       
+        
+    }
+
+.button.btn.btn-default.btn-sm.btn-attach {
+    
+    background: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+        
+        
+        
+    }
+
+.form-control {
+        background: rgba( 221, 232, 241, 0.5 ) !important;
+        box-shadow: 0 3px 13px 0 rgb(31 38 135 / 37%);
+        backdrop-filter: blur( 2px );
+        -webkit-backdrop-filter: blur( 2px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+
+.attached-file.flex.justify-between.align-center{
+        background: rgba( 221, 232, 241, 0.5 ) !important;
+        box-shadow: 0 3px 13px 0 rgb(31 38 135 / 37%);
+        backdrop-filter: blur( 2px );
+        -webkit-backdrop-filter: blur( 2px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+btn:not(:disabled):not(.disabled) {
+        background: rgba(255,255,255,0.5);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.25);
+        cursor: pointer;
+    }
+
+// div#page-tempalate-page {
+//         /* background: rgba( 221, 232, 241, 0.5 ) !important; */
+//         /*box-shadow: 0 3px 13px 0 rgb(31 38 135 / 37%);*/
+//         /*backdrop-filter: blur( 2px );*/
+//         /*-webkit-backdrop-filter: blur( 2px );*/
+//         /*border-radius: 10px;*/
+//         /*border: 1px solid rgba( 255, 255, 255, 0.18 );*/
+//         background: cadetblue;
+//     }
+
+
+
+html{
+    height: auto;
+}
+body{    background: #edc0bf;
+    background: linear-gradient(90deg, #edc0bf 0,#c4caef 58%);
+}
+.avatar-frame.standard-image {
+    background: rgba( 221, 232, 241, 0.5 ) !important;
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+}
+
+nav.navbar.navbar-light.navbar-expand-lg {
+    background: rgba( 221, 232, 241, 0.5 ) !important;
+    box-shadow: 0 3px 13px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+h1 {
+    margin: 0;
+    font-size: revert;
+
+}
+
+
+
+
+label{
+    color : black;
+    font-weight: 500;
+    font-size: 15px;
 }

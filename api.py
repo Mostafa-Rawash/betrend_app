@@ -4,10 +4,10 @@ import frappe
 from frappe import auth
 from frappe.website.utils import is_signup_disabled
 from frappe import throw, msgprint, _
-from frappe.utils import (cint, flt, has_gravatar, escape_html, format_datetime,
+from frappe.utils import (cint, flt, has_gravatar, escape_html, format_datetime)
 
 @frappe.whitelist( allow_guest=True )
-def login(usr, pwd):
+def login(usr, pwd): 
     try:
         login_manager = frappe.auth.LoginManager()
         login_manager.authenticate(user=usr, pwd=pwd)
