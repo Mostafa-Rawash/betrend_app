@@ -1,7 +1,7 @@
 <div align="center" dir="auto">
 
 <img src="https://github.com/Mostafa-Rawash/betrend_app/assets/52187438/8ea8fbd8-f2c7-4f4e-90ab-ac0fdab13076" alt="drawing" width="200" />
-
+</div>
 
 # Betrend App
 
